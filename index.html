@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es"> <!--Define el lenguaje de la página, obligatorio según WCAG 2.2 Criterio 3.1.1-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sin esta línea, los celulares escalan 
+    la página simulando una pantalla de escritorio-->
+    <title>Este será el nombre de la página</title> <!-- Obligatorio según WHATGC Y WGAC-->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header> 
+        <h1>Nombre del negocio</h1>
+        <p>Breve descripción o eslogan</p>
+
+        <nav aria-label="Navegación principal">
+            <ul> 
+                <li><a href="#catalogo"> Catálogo </a></li>
+                <li><a href="#lista-precios"> Tabla de precios </a></li>
+                <li> <a href="#costos-envio"> Costos de envío </a></li>
+                <li><a href="#fechas-envio"> Fechas de envío </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalogo">
+            <h2>Catálogo de artesanías</h2>
+            <article>
+               <h3>Aquí va un producto del catálogo</h3> 
+               <p>Descripción del producto</p>
+            </article>
+        </section>
+        <section id="tabla-precios">
+            <h2>Tabla de precios de los productos</h2>
+            <p>Lista de precios de nuestros productos</p>
+        </section>
+        <section id="costos-envio">
+            <h2>Costos de envío</h2>
+            <p>Costos de envío según la ciudad o sector</p>
+        </section>
+        <section id="fechas-envio">
+            <h2>Fechas de envío</h2>
+            <p>Fechas de envío disponibles para cada ciudad</p>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Indicaciones de cuidado</h2>
+        <p></p>
+    </aside>
+</body>
+</html>
