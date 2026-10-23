@@ -4,49 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sin esta línea, los celulares escalan 
     la página simulando una pantalla de escritorio-->
-    <title>Este será el nombre de la página</title> <!-- Obligatorio según WHATGC Y WGAC-->
+    <title>Manos del Azuay | Artesanías del Ecuador</title> <!-- Obligatorio según WHATWG y WCAG 2.2 Criterio 2.4.2-->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
-    <header> 
-        <h1>Nombre del negocio</h1>
-        <p>Breve descripción o eslogan</p>
+
+    <header>
+
+        <h1>Manos del Azuay</h1>
+        <p>Artesanías del Ecuador hechas completamente a mano</p>
 
         <nav aria-label="Navegación principal">
-            <ul> 
-                <li><a href="#catalogo"> Catálogo </a></li>
-                <li><a href="#lista-precios"> Tabla de precios </a></li>
-                <li> <a href="#costos-envio"> Costos de envío </a></li>
-                <li><a href="#fechas-envio"> Fechas de envío </a></li>
+
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#tabla-precios">Tabla de precios</a></li>
+                <li><a href="#pedidos">Pedidos personalizados</a></li>
+                <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+
         <section id="catalogo">
+
             <h2>Catálogo de artesanías</h2>
             <article>
-               <h3>Aquí va un producto del catálogo</h3> 
-               <p>Descripción del producto</p>
+                <h3>Sombrero de paja toquilla</h3>
+                <img src="img/sombrero-paja-toquilla.jpg"
+                    alt="Sombrero de paja toquilla color natural, tejido a mano, con cinta negra"
+                    width="400" height="300">
+                <p>Sombrero tradicional de paja toquilla, hecho completamente a mano.</p>
+                <p>Precio: $100.00</p>
             </article>
+
+            <article>
+                <h3>Poncho tradicional</h3>
+                <img src="img/poncho.jpg"
+                    alt="Poncho de lana con diseños geométricos teñidos con la técnica ikat"
+                    width="400" height="300">
+                <p>Poncho tradicional fabricado artesanalmente con la técnica ikat.</p>
+                <p>Precio: $240.00</p>
+            </article>
+
+            <article>
+                <h3>Vasija de barro</h3>
+                <img src="img/alfareria.jpg"
+                    alt="Vasija de barro cocido de color rojizo, moldeada a mano"
+                    width="400" height="300">
+                <p>Vasija de barro fabricada por las manos de hábiles alfareros.</p>
+                <p>Precio: $7.00</p>
+            </article>
+
+            <article>
+                <h3>Escultura de madera</h3>
+                <img src="img/tallado.jpg"
+                    alt="Escultura tallada a mano en madera de cedro"
+                    width="400" height="300">
+                <p>Escultura tallada artesanalmente en madera de cedro.</p>
+                <p>Precio: $235.00</p>
+            </article>
+
         </section>
+
         <section id="tabla-precios">
-            <h2>Tabla de precios de los productos</h2>
-            <p>Lista de precios de nuestros productos</p>
+            
+            <h2>Tabla de precios de los productos y envíos</h2>
+            <div class="contenedor-tabla">
+                <table>
+                    <caption>Precio de cada artesanía y costo de envío nacional, en dólares</caption>
+                    <thead>
+
+                        <tr>
+                            <th scope="col">Artesanía</th>
+                            <th scope="col">Material</th>
+                            <th scope="col">Precio base</th>
+                            <th scope="col">Costo de envío nacional</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <th scope="row">Sombrero de paja toquilla</th>
+                            <td>Paja toquilla</td>
+                            <td>$100.00</td>
+                            <td>$5.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Poncho tradicional</th>
+                            <td>Lana de oveja</td>
+                            <td>$240.00</td>
+                            <td>$8.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vasija de barro</th>
+                            <td>Barro cocido</td>
+                            <td>$7.00</td>
+                            <td>$4.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Escultura de madera</th>
+                            <td>Madera de cedro</td>
+                            <td>$235.00</td>
+                            <td>$10.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
-        <section id="costos-envio">
-            <h2>Costos de envío</h2>
-            <p>Costos de envío según la ciudad o sector</p>
+
+        <section id="pedidos">
+
+            <h2>Pedidos personalizados</h2>
+            <p>¿Llevas tiempo buscando una pieza única? ¡No busques más!
+                Nosotros la hacemos por ti. Envíanos tus datos y una imagen de referencia.</p>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Datos de contacto</legend>
+
+                    <label for="nombre">Nombre completo</label>
+
+                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+
+                    <label for="correo">Correo electrónico</label>
+
+                    <input type="email" id="correo" name="correo" autocomplete="email" required>
+
+                    <label for="telefono">Teléfono celular</label>
+
+                    <input type="tel" id="telefono" name="telefono" autocomplete="tel"
+                        pattern="09[0-9]{8}" aria-describedby="ayuda-telefono" required>
+                    <p id="ayuda-telefono">10 dígitos, empezando por 09. Ejemplo: 0991234567</p>
+
+                    <label for="provincia">Provincia de envío</label>
+
+                    <select id="provincia" name="provincia" required>
+                        <option value="">Selecciona una provincia</option>
+                        <option value="azuay">Azuay</option>
+                        <option value="guayas">Guayas</option>
+                        <option value="pichincha">Pichincha</option>
+                        <option value="manabi">Manabí</option>
+                        <option value="loja">Loja</option>
+                        <option value="otra">Otra</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Detalles del pedido</legend>
+
+                    <label for="artesania">Tipo de artesanía</label>
+
+                    <select id="artesania" name="artesania" required>
+                        <option value="">Selecciona una artesanía</option>
+                        <option value="sombrero">Sombrero de paja toquilla</option>
+                        <option value="poncho">Poncho tradicional</option>
+                        <option value="vasija">Vasija de barro</option>
+                        <option value="escultura">Escultura de madera</option>
+                    </select>
+
+                    <label for="cantidad">Cantidad</label>
+
+                    <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1"
+                        aria-describedby="ayuda-cantidad" required>
+                    <p id="ayuda-cantidad">Mínimo 1 y máximo 10 piezas por pedido.</p>
+
+                    <label for="descripcion">Describe la pieza que deseas</label>
+
+                    <textarea id="descripcion" name="descripcion" rows="4" minlength="10" required></textarea>
+
+                    <label for="referencia">Imagen de referencia</label>
+
+                    <input type="file" id="referencia" name="referencia"
+                        accept="image/png, image/jpeg" aria-describedby="ayuda-archivo">
+                    <p id="ayuda-archivo">Solo se aceptan imágenes en formato JPG o PNG.</p>
+                </fieldset>
+
+                <button type="submit">Enviar pedido</button>
+            </form>
         </section>
-        <section id="fechas-envio">
-            <h2>Fechas de envío</h2>
-            <p>Fechas de envío disponibles para cada ciudad</p>
+
+        <section id="preguntas-frecuentes">
+
+            <h2>Preguntas frecuentes</h2>
+            <p>Selecciona una pregunta para ver la respuesta.</p>
+            <details>
+
+                <summary>¿Qué días se realizan envíos nacionales?</summary>
+                <p>Los envíos a otras provincias se realizan todos los lunes y jueves a las 10:00.</p>
+            </details>
+
+            <details>
+                <summary>¿Cuánto tarda en llegar mi pedido?</summary>
+                <p>Entre 2 y 4 días hábiles en ciudades principales, y hasta 7 días en zonas rurales.</p>
+            </details>
+
+            <details>
+
+                <summary>¿Cuánto cuesta el envío?</summary>
+                <p>Depende del producto. Puedes ver el costo de cada uno en la <a href="#tabla-precios">tabla de precios</a>.</p>
+            </details>
+
+            <details>
+                <summary>¿Cuánto tarda un pedido personalizado?</summary>
+                <p>Entre 2 y 4 semanas, según la pieza. Puedes solicitarlo en la sección de <a href="#pedidos">pedidos personalizados</a>.</p>
+            </details>
         </section>
     </main>
 
     <aside>
         <h2>Indicaciones de cuidado</h2>
-        <p></p>
+        <ul>
+            <li>Limpia las piezas con un paño seco y suave.</li>
+            <li>Evita la humedad y la luz solar directa por largos periodos.</li>
+            <li>No laves con agua los sombreros de paja toquilla ni las esculturas de madera.</li>
+            <li>Lava los ponchos a mano con agua fría y sécalos a la sombra.</li>
+        </ul>
     </aside>
+
+    <footer>
+        <address>
+            <p>Correo: <a href="mailto:mnamicela@est.ups.edu.ec">mnamicela@est.ups.edu.ec</a></p>
+            <p>Teléfono: <a href="tel:+593984603946">0984603946</a></p>
+        </address>
+        <p><small>&copy; 2026 Manos del Azuay. Todos los derechos reservados.</small></p>
+    </footer>
 </body>
 </html>
