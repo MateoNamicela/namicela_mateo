@@ -1,12 +1,13 @@
 :root {
-    --color-fondo: #fdf8f0;
-    --color-texto: #2b2118;
-    --color-primario:  #8a3b12;
-    --color-primario-texto:  #ffffff;
+    --color-fondo-pagina: #fdf8f0;
+    --color-texto-principal: #2b2118;
+    --color-marca: #8a3b12;
+    --color-texto-sobre-marca: #ffffff;
     --color-borde: #7d6a55;
     --color-foco: #0b57d0;
-    --color-hove: #f0e4d2;
+    --color-fondo-hover: #f0e4d2;
 }
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -16,18 +17,15 @@ body {
     padding: 1rem;
     font-family: system-ui, sans-serif;
     line-height: 1.6;
-
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-
-
+    background-color: var(--color-fondo-pagina);
+    color: var(--color-texto-principal);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "cabecera"
-    "principal"
-    "lateral"
-    "pie";
+    grid-template-areas:
+        "cabecera"
+        "principal"
+        "lateral"
+        "pie";
     gap: 1rem;
 }
 
@@ -39,11 +37,16 @@ footer {grid-area: pie;}
 @media (min-width: 600px) {
     body {
         grid-template-columns: 2fr 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "cabecera cabecera"
             "principal lateral"
-            "pie         pie";
+            "pie pie";
     }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 nav ul {
@@ -58,7 +61,7 @@ nav ul {
 nav a {
     display: inline-block;
     padding: 0.5rem 0.75rem;
-    color: var(--color-primario);
+    color: var(--color-marca);
     font-weight: bold;
 }
 
@@ -73,7 +76,7 @@ summary:focus-visible {
 }
 
 .contenedor-tabla {
-    overflow: auto;
+    overflow-x: auto;
 }
 
 table {
@@ -93,9 +96,54 @@ th, td {
     text-align: left;
 }
 
-thead th{
-    background-color: var(--color-primario);
-    color: var(--color-primario-texto);
+thead th {
+    background-color: var(--color-marca);
+    color: var(--color-texto-sobre-marca);
+}
+
+fieldset {
+    border: 1px solid var(--color-borde);
+    padding: 1rem;
+    margin: 0 0 1rem;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    padding: 0.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.25rem;
+    font: inherit;
+}
+
+fieldset p {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-marca);
+    color: var(--color-texto-sobre-marca);
+    border: 0;
+    border-radius: 0.25rem;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 details {
@@ -111,7 +159,7 @@ summary {
 }
 
 summary:hover {
-    background-color: var(--color-hove);
+    background-color: var(--color-fondo-hover);
 }
 
 details[open] summary {
