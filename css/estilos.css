@@ -30,7 +30,7 @@ body {
 }
 
 header {grid-area: cabecera;}
-main {grid-area: principal;}
+main {grid-area: principal; min-width: 0;}
 aside {grid-area: lateral;}
 footer {grid-area: pie;}
 
